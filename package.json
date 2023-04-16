@@ -1,0 +1,14 @@
+{
+  "name": "randomideas-api-alex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "alex gerhardt",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
