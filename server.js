@@ -4,9 +4,14 @@ const cors = require('cors');
 require('dotenv').config();
 const port = process.env.PORT || 5000;
 const connectDB = require('./config/db');
+const logger = require('./middleware/logger');
 
 connectDB();
 const app = express();
+
+//middleware
+
+app.use(logger);
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -30,4 +35,13 @@ app.get('/', (req, res) => {
 const ideaRouter = require('./routes/ideas');
 app.use('/api/ideas', ideaRouter);
 
-app.listen(port, () => console.log(`Server listening on ${port}`));
+const server = app.listen(port, () =>
+  console.log(`Server listening on ${port}`)
+);
+
+//handle unhandled promise rejections
+process.on('unhandledRejection', (err, promise) => {
+  console.log(`Error: ${err.message}`);
+  //close server (fail) and exit process
+  server.close(() => process.exit(1));
+});
