@@ -67,6 +67,12 @@ class IdeaList {
   render() {
     this._ideaListEl.innerHTML = this._ideas
       .map((idea) => {
+        const date = new Date(idea.date).toLocaleDateString('en-us', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        });
         const tagClass = this.getTagClass(idea.tag);
         const deleteBtn =
           idea.username === localStorage.getItem('username')
@@ -80,7 +86,7 @@ class IdeaList {
           </h3>
           <p class="tag ${tagClass}">${idea.tag.toUpperCase()}</p>
           <p>
-            Posted on <span class="date">${idea.Date}</span> by
+            Posted on <span class="date">${date}</span> by
             <span class="author">${idea.username}</span>
           </p>
         </div>
