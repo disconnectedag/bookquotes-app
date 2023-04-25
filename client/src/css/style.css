@@ -103,12 +103,12 @@ form label {
   padding: 0 15px;
 }
 
-.ideas {
+.quotes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.ideas .card {
+.quotes .card {
   position: relative;
   background-color: #fff;
   margin: 10px;
@@ -117,7 +117,7 @@ form label {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.tag {
+.genre {
   display: inline-block;
   background-color: #333;
   color: #fff;
@@ -127,31 +127,43 @@ form label {
   font-size: 14px;
 }
 
-.tag-technology {
+.genre-self-help {
   background: steelblue;
 }
 
-.tag-software {
+.genre-sports {
   background: coral;
 }
 
-.tag-business {
+.genre-business {
   background: green;
 }
-.tag-career {
+.genre-life-design {
   background: orange;
 }
 
-.tag-education {
+.genre-fiction {
   background: purple;
 }
 
-.tag-health {
+.genre-health {
   background: red;
 }
 
-.tag-inventions {
+.genre-non-fiction {
   background: orange;
+}
+.genre-philosophy {
+  background: hsl(217, 77%, 46%);
+}
+.genre-technology {
+  background: hsl(123, 77%, 46%);
+}
+.genre-science-fiction {
+  background: hsl(57, 89%, 44%);
+}
+.genre-spiritual {
+  background: hsl(0, 90%, 41%);
 }
 
 .delete {

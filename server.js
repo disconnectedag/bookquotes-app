@@ -32,8 +32,8 @@ app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
-const ideaRouter = require('./routes/ideas');
-app.use('/api/ideas', ideaRouter);
+const quoteRouter = require('./routes/quotes');
+app.use('/api/quotes', quoteRouter);
 
 const server = app.listen(port, () =>
   console.log(`Server listening on ${port}`)
